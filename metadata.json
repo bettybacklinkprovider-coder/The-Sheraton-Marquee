@@ -1,0 +1,6 @@
+{
+  "name": "The Sheraton Marquee",
+  "description": "Premier luxury wedding marquee and banquet venue on Sahianwala Expressway, Faisalabad. Grand halls, royal catering, lavish decors, and bespoke corporate events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
