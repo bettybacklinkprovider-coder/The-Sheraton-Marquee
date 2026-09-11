@@ -58,7 +58,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, language }
   const selectedItem = selectedItemIndex !== null ? filteredItems[selectedItemIndex] : null;
 
   return (
-    <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
       {/* Title */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6B1724]/80 border border-[#D4AF37]/50 text-xs font-semibold text-[#F9E7B9] uppercase tracking-wider">
@@ -171,6 +171,16 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onNavigate, language }
                   ))}
                 </div>
               </div>
+            </div>
+
+            {/* Small Elegant Caption Beneath the Image Container */}
+            <div className="px-6 py-2.5 bg-[#0D0704] border-b border-[#D4AF37]/15 flex flex-wrap items-center justify-between gap-2 text-[10px] text-[#FAF7F2]/80">
+              <span className="font-medium text-[#F3E2B3] italic font-sans">
+                {isUrdu ? `${item.decorStyle} • ${item.hallName} کا خوبصورت منظر` : `Elegant view of ${item.decorStyle} at ${item.hallName}`}
+              </span>
+              <span className="text-[9px] font-mono text-[#D4AF37] bg-black/40 px-2 py-0.5 rounded border border-[#D4AF37]/20">
+                {typeof item.specs === 'object' ? item.specs.stage : item.specs}
+              </span>
             </div>
 
             {/* Lower Information Block */}

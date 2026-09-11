@@ -20,6 +20,7 @@ import {
   Eye,
 } from 'lucide-react';
 import { PageId, Language } from '../../types';
+import { SheratonLogo } from '../SheratonLogo';
 import {
   MARQUEE_INFO,
   HALLS_DATA,
@@ -425,8 +426,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 }}
               />
               <div className="relative z-10 flex flex-col items-center justify-center text-center py-8 space-y-6">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#6B1724] to-[#3B0C14] border-2 border-[#D4AF37] flex items-center justify-center shadow-xl">
-                  <Crown className="w-10 h-10 text-[#D4AF37]" />
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#6B1724] to-[#3B0C14] border-2 border-[#D4AF37] flex items-center justify-center shadow-xl overflow-hidden">
+                  <SheratonLogo variant="mark-only" size="lg" />
                 </div>
                 <div className="space-y-2 max-w-sm">
                   <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37]">
@@ -1034,7 +1035,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* 9. Live Instagram / Decor Themes Showcase */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] block">

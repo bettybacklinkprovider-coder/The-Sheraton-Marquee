@@ -35,16 +35,16 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isUrdu = language === 'ur';
 
-  const navLinks: { id: PageId; label: string; urduLabel: string }[] = [
+  const navLinks: { id: PageId; label: string; urduLabel: string; secondary?: boolean }[] = [
     { id: 'home', label: 'Home', urduLabel: 'ہوم' },
     { id: 'about', label: 'About Us', urduLabel: 'ہمارے بارے میں' },
     { id: 'halls', label: 'Halls & Venues', urduLabel: 'ہالز و لانز' },
     { id: 'services', label: 'Services', urduLabel: 'خدمات' },
     { id: 'packages', label: 'Packages & Pricing', urduLabel: 'پیکیجز اور ریٹس' },
     { id: 'gallery', label: 'Gallery', urduLabel: 'گیلری' },
-    { id: 'testimonials', label: 'Reviews', urduLabel: 'تاثرات' },
-    { id: 'blog', label: 'Blog', urduLabel: 'بلاگ' },
-    { id: 'faq', label: 'FAQ', urduLabel: 'سوالات' },
+    { id: 'testimonials', label: 'Reviews', urduLabel: 'تاثرات', secondary: true },
+    { id: 'blog', label: 'Blog', urduLabel: 'بلاگ', secondary: true },
+    { id: 'faq', label: 'FAQ', urduLabel: 'سوالات', secondary: true },
     { id: 'contact', label: 'Contact & Booking', urduLabel: 'رابطہ و بکنگ' },
   ];
 
@@ -57,8 +57,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
       {/* Top Royal Announcement Bar */}
-      <div className="bg-gradient-to-r from-[#2A080C] via-[#4A0E17] to-[#2A080C] border-b border-[#D4AF37]/30 text-xs py-1.5 px-3 sm:px-4 text-[#FAF7F2]">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div className="bg-gradient-to-r from-[#2A080C] via-[#4A0E17] to-[#2A080C] border-b border-[#D4AF37]/30 text-xs py-1.5 px-4 sm:px-6 lg:px-8 text-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-center sm:text-left whitespace-nowrap overflow-hidden">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75"></span>
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Main Luxury Navigation Bar */}
       <nav className="bg-[#0F0A08]/95 backdrop-blur-md border-b border-[#D4AF37]/20 shadow-2xl">
-        <div className="max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-2">
             {/* Brand Logo & Royal Crest */}
             <div
@@ -109,14 +109,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* Desktop Navigation Links - Strictly in a single line */}
-            <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1 shrink min-w-0">
+            <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 shrink min-w-0">
               {navLinks.map((link) => {
                 const isActive = currentPage === link.id;
                 return (
                   <button
                     key={link.id}
                     onClick={() => handleNavClick(link.id)}
-                    className={`px-2 2xl:px-2.5 py-1.5 rounded-md text-[11px] 2xl:text-xs font-medium tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
+                    className={`px-1.5 2xl:px-2.5 py-1.5 rounded-md text-[10px] xl:text-[11px] 2xl:text-xs font-medium tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
+                      link.secondary ? 'hidden 2xl:inline-block' : 'inline-block'
+                    } ${
                       isUrdu ? 'font-urdu text-sm' : 'uppercase'
                     } ${
                       isActive

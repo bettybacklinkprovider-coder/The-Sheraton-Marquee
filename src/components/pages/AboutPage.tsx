@@ -14,6 +14,7 @@ import {
   Phone,
 } from 'lucide-react';
 import { PageId, Language } from '../../types';
+import { SheratonLogo } from '../SheratonLogo';
 import { MARQUEE_INFO } from '../../data/marqueeData';
 
 interface AboutPageProps {
@@ -156,8 +157,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, language }) =>
                 backgroundSize: '24px 24px',
               }}
             />
-            <div className="relative z-10 w-20 h-20 rounded-2xl bg-[#6B1724] border-2 border-[#D4AF37] flex items-center justify-center shadow-2xl mb-4">
-              <Crown className="w-10 h-10 text-[#D4AF37]" />
+            <div className="relative z-10 w-20 h-20 rounded-2xl bg-[#6B1724] border-2 border-[#D4AF37] flex items-center justify-center shadow-2xl mb-4 overflow-hidden">
+              <SheratonLogo variant="mark-only" size="lg" />
             </div>
             <div className="relative z-10 space-y-2 max-w-sm">
               <h3 className="font-cinzel text-xl font-bold text-[#F9E7B9]">

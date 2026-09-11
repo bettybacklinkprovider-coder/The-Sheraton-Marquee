@@ -14,6 +14,7 @@ import {
   Info,
 } from 'lucide-react';
 import { PageId, Language, Hall } from '../../types';
+import { SheratonLogo } from '../SheratonLogo';
 import { HALLS_DATA } from '../../data/marqueeData';
 
 interface HallsPageProps {
@@ -170,8 +171,8 @@ export const HallsPage: React.FC<HallsPageProps> = ({
                 {/* Center Blueprint Emblem & Hotspots */}
                 <div className="relative z-10 my-6 space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-[#6B1724] border border-[#D4AF37] flex items-center justify-center text-[#D4AF37] shadow-lg">
-                      <Crown className="w-6 h-6" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6B1724] border border-[#D4AF37] flex items-center justify-center text-[#D4AF37] shadow-lg overflow-hidden">
+                      <SheratonLogo variant="mark-only" size="sm" />
                     </div>
                     <div>
                       <span className="text-[11px] font-mono text-[#D4AF37] uppercase tracking-wider block">
